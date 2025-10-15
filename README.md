@@ -93,9 +93,10 @@ Each file contains setup and loop functions to handle sensor reading, wireless c
 
 ---
 
-## 📸 Project Images (Add Here)
+## 📸 Project Images
 
-You can include photos or circuit diagrams here, for example:
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/8c124adb-3022-4300-b143-15c20a2554e6" />
+
 
 ---
 

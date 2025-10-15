@@ -1,0 +1,49 @@
+The project requires the following libraries, all available through the Arduino IDE Library Manager:
+
+| Library Name | Purpose                                      | Installation                      |
+| ------------ | -------------------------------------------- | --------------------------------- |
+| `esp_now.h`  | Core ESP-NOW communication protocol          | Built-in with ESP32 board support |
+| `WiFi.h`     | Required to initialize ESP32 in station mode | Built-in with ESP32 board support |
+| `Arduino.h`  | Core Arduino functions                       | Built-in with Arduino IDE         |
+
+> ⚠ Note: No external third-party libraries are required for basic ESP-NOW functionality.
+
+---
+
+### **Setup Instructions**
+
+1. **Install Arduino IDE**
+
+   * Download the latest version from [Arduino Official Website](https://www.arduino.cc/en/software).
+
+2. **Add ESP32 Board Support**
+
+   * Open Arduino IDE → File → Preferences → Additional Boards Manager URLs
+
+     ```
+     https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+     ```
+   * Go to Tools → Board → Boards Manager → Search “ESP32” → Install
+
+3. **Connect ESP32 Modules**
+
+   * Use USB cables to connect Head and Tail ESP32 boards to your computer.
+   * Select the correct board and COM port for each (`Tools → Board → ESP32 Dev Module` and `Tools → Port`).
+
+4. **Configure MAC Addresses**
+
+   * In `head.ino`, set `TAIL_MAC_ADDRESS` to the MAC of your Tail ESP32.
+   * In `tail.ino`, set `HEAD_MAC_ADDRESS` if bidirectional communication is needed.
+
+5. **Upload Code**
+
+   * Open `head.ino` → Upload to the Head ESP32
+   * Open `tail.ino` → Upload to the Tail ESP32
+
+6. **Monitor Serial Output**
+
+   * Open Serial Monitor (115200 baud) to see real-time data being sent and received.
+
+7. **Test Synchronization**
+
+   * Observe LEDs, counters, or other output indicators to ensure Head and Tail are synchronized.
